@@ -7,3 +7,12 @@
     color: black;
 
 }
+
+.flecha {
+    border: 1px solid black;
+    border-radius: 6em;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    align-content: center;
+}
