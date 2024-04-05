@@ -17,8 +17,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--second-bg-color);
 }
 h2{
-    
     word-break: break-all;
 }

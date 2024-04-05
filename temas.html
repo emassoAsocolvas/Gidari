@@ -12,9 +12,12 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="static/css/index.css">
     <style>
-        div#temas{
-            h1{font-size: 1.5em;}
-            details{
+        div#temas {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            details {
                 border: 1px solid black;
                 border-radius: .5em;
                 padding: .3em;
@@ -28,9 +31,9 @@
 
     <div class="container-fluid">
         <header></header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav id="menuNavBar" class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/Gidari/">GIDARI</a>
+                <a class="navbar-brand" href="#">GIDARI</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -38,15 +41,16 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="/Gidari/">Index</a>
                         <a class="nav-link" href="/Gidari/temas.html">Empadronamiento</a>
                         <a class="nav-link" href="/Gidari/temas.html">Salud</a>
                         <a class="nav-link" href="/Gidari/temas.html">Educación</a>
+                        <a class="nav-link" href="/Gidari/temas.html">Consejos pre viaje</a>
+                        <a class="nav-link" href="/Gidari/temas.html">Consejos post viaje</a>
                     </div>
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="perfil.html">login</a>
+                        <a class="nav-link" href="/Gidari/registro.html">login</a>
                     </div>
                 </div>
             </div>
