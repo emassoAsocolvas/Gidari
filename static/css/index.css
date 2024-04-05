@@ -1,13 +1,46 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url("/static/css/base.css");
+
+.container-fluid {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: var(--background);
+}
+
+nav#menuNavBar {
+    padding: 0 1em 0 1em;
+}
+
+
+nav#menuNavBar,
+nav#menuNavBar * {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    transition: background-color .5s, color .5s;
+}
+
+
+a.nav-link:hover {
+    background-color: var(--second-bg-color) !important;
+    color: var(--second-text-color) !important;
+}
+
+#temas a {
+    padding: 0 0 0 1em;
+    text-decoration: none;
+    background-color: var(--second-bg-color);
+    color: var(--second-text-color);
+    transition: background-color .5s, color .5s;
+}
+
+#temas a:hover {
+    background-color: var(--primary-bg-color) !important;
+    color: var(--primary-text-color) !important;
+}
+
 .carousel {
     max-width: 70%;
 }
 
-#temas * {
-    text-decoration: none;
-    color: black;
-}
-i{
+i {
     font-size: 2em;
 }
-
