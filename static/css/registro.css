@@ -134,7 +134,8 @@ body {
     color: #a7a7a7;
 }
 
-.form input[type="submit"] {
+.form input[type="submit"], .form a  {
+    text-decoration: none;
     background-color: #9191bd;
     color:#fff;
     border-radius: 20px;
