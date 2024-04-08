@@ -41,9 +41,6 @@ a.nav-link:hover, a.nav-link:hover i{
     color: var(--primary-text-color) !important;
 }
 
-.carousel {
-    max-width: 70%;
-}
 
 i {
     font-size: 2em;
