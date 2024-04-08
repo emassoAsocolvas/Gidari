@@ -1,0 +1,26 @@
+div#temas {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    details {
+        border: 1px solid black;
+        border-radius: .5em;
+        padding: .3em;
+        margin: 0 0 1.5em 0;
+        overflow: hidden;
+        max-height: 3em;
+        transition: max-height 0.3s ease-out;
+    }
+
+    details[open] {
+        border: 1px solid green;
+        background-color: greenyellow;
+        max-height: 100%;
+    }
+
+    /* Estilo para el detalle expandido */
+    details:not([open]) {
+        background-color: lightgray;
+    }
+}
