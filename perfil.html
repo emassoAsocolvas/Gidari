@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -16,95 +16,105 @@
 </head>
 
 <body>
-    <div class="pagina">
-        <nav id="menuNavBar" class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/Gidari">GIDARI</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="/Gidari/recomendaciones.html">Recomendaciones</a>
-                        <a class="nav-link" href="/Gidari/vivienda.html">Vivienda</a>
-                        <a class="nav-link" href="/Gidari/salud.html">Salud</a>
-                        <a class="nav-link" href="/Gidari/educacion.html">Educación</a>
-                        <a class="nav-link" href="/Gidari/quienesSomos.html">¿Quiénes somos?</a>
-                    </div>
-                </div>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="/Gidari/">salir</a>
-                    </div>
+    <nav id="menuNavBar" class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/Gidari">GIDARI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/Gidari/recomendaciones.html">Recomendaciones</a>
+                    <a class="nav-link" href="/Gidari/vivienda.html">Vivienda</a>
+                    <a class="nav-link" href="/Gidari/salud.html">Salud</a>
+                    <a class="nav-link" href="/Gidari/educacion.html">Educación</a>
+                    <a class="nav-link" href="/Gidari/quienesSomos.html">¿Quiénes somos?</a>
                 </div>
             </div>
-        </nav>
-        <div class="body">
-            <div id="medidores" class="m-4">
-                <div class="row">
-                    <div class="col-4">
-                        <p>Empadronamiento</p>
-                        <div id="bar-Empadronamiento" class="progress" role="progressbar" aria-label="Example with label"
-                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar" style="width: 25%">25%</div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <p>Salud</p>
-                        <div id="bar-Salud" class="progress" role="progressbar" aria-label="Example with label"
-                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar" style="width: 25%">25%</div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <p>Educación</p>
-                        <div id="bar-Educacion" class="progress" role="progressbar" aria-label="Example with label"
-                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar" style="width: 25%">25%</div>
-                        </div>
-                    </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/Gidari/">salir</a>
                 </div>
             </div>
-            <div id="ToDo">
-                <div class="row">
-                    <div class="col-8">
-                        <div class="row">
-                            <div class="col-4" id="Empadronamiento">
-                                <h2>Empadronamiento</h2>
-                                <div class="marcoToDo">
-                                    <label> paso 1 <input type="checkbox" name="paso1"
-                                            id="empadronamiento-paso1"></label>
-                                    <label> paso 2 <input type="checkbox" name="paso2"
-                                            id="empadronamiento-paso2"></label>
-                                    <label> paso 3 <input type="checkbox" name="paso3"
-                                            id="empadronamiento-paso3"></label>
+        </div>
+    </nav>
+    <div class="container-fluid">
 
+        <div class="pagina">
+            <h1>Avance en tu proceso</h1>
+            <div class="body m-1">
+                <div id="medidores" class="m-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <p>Empadronamiento</p>
+                            <div id="bar-Empadronamiento" class="progress" role="progressbar"
+                                aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+                                aria-valuemax="100">
+                                <div class="progress-bar" style="width: 25%">25%</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <p>Salud</p>
+                            <div id="bar-Salud" class="progress" role="progressbar" aria-label="Example with label"
+                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 25%">25%</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <p>Educación</p>
+                            <div id="bar-Educacion" class="progress" role="progressbar" aria-label="Example with label"
+                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 25%">25%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="textos" class="row justify-content-center  g-0">
+                    <div class="col-3 border" id="links">
+
+                    </div>
+                    <div class="col-8 border p-1" id="texto">Da click a los paso de abajo para ver mas información</div>
+                </div>
+                <div id="ToDo">
+                    <div class="row justify-content-evenly g-0">
+                        <div class="col-3" id="Empadronamiento">
+                            <h2>Empadronamiento</h2>
+                            <div class="marcoToDo">
+                                <label class="d-flex justify-content-between m-1"><span>Recolectar los documentos</span>
+                                    <input type="checkbox" name="paso1" id="empadronamiento-paso1"></label>
+                                <label class="d-flex justify-content-between m-1"><span>Reservar cita
+                                        previa</span><input type="checkbox" name="paso2"
+                                        id="empadronamiento-paso2"></label>
+                                <label class="d-flex justify-content-between m-1"><span>Acudir a la cita
+                                        previa</span><input type="checkbox" name="paso3"
+                                        id="empadronamiento-paso3"></label>
+                                <label class="d-flex justify-content-between m-1"><span>Tienes el
+                                        empadronamiento</span><input type="checkbox" name="paso4"
+                                        id="empadronamiento-paso4"></label>
+                            </div>
+                        </div>
+                        <div class="col-3" id="Salud">
+                            <h2>Salud</h2>
+                            <div class="marcoToDo">
+                                <div class="row">
+                                    <label> paso 1 <input type="checkbox" name="paso1" id="salud-paso1"></label>
+                                    <label> paso 2 <input type="checkbox" name="paso2" id="salud-paso2"></label>
+                                    <label> paso 3 <input type="checkbox" name="paso3" id="salud-paso3"></label>
                                 </div>
                             </div>
-                            <div class="col-4" id="Salud">
-                                <h2>Salud</h2>
-                                <div class="marcoToDo">
-                                    <div class="row">
-                                        <label> paso 1 <input type="checkbox" name="paso1" id="salud-paso1"></label>
-                                        <label> paso 2 <input type="checkbox" name="paso2" id="salud-paso2"></label>
-                                        <label> paso 3 <input type="checkbox" name="paso3" id="salud-paso3"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4" id="Educacion">
-                                <h2>Educación</h2>
-                                <div class="marcoToDo">
-                                    <label> paso 1 <input type="checkbox" name="paso1" id="educacion-paso1"></label>
-                                    <label> paso 2 <input type="checkbox" name="paso2" id="educacion-paso2"></label>
-                                    <label> paso 3 <input type="checkbox" name="paso3" id="educacion-paso3"></label>
-                                </div>
+                        </div>
+                        <div class="col-3" id="Educacion">
+                            <h2>Educación</h2>
+                            <div class="marcoToDo">
+                                <label> paso 1 <input type="checkbox" name="paso1" id="educacion-paso1"></label>
+                                <label> paso 2 <input type="checkbox" name="paso2" id="educacion-paso2"></label>
+                                <label> paso 3 <input type="checkbox" name="paso3" id="educacion-paso3"></label>
                             </div>
                         </div>
                     </div>
                     <div id="chatbot" class="">
-                        <h2 class="position-fixed" style="bottom: 2em; right:2em;">Chatbot</h2>
+                        <h2 class="position-fixed" style="bottom: 1em; right:1em;"><i class="bi bi-wechat"></i></h2>
                     </div>
 
                 </div>
@@ -113,6 +123,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

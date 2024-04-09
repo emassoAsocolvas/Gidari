@@ -9,3 +9,7 @@
 
     background-color: var(--background)
 }
+
+body {
+    background-color: var(--second-bg-color);
+}
