@@ -13,8 +13,10 @@ function init() {
 }
 
 function cargarEventosCheckBox() {
-    [...document.querySelectorAll("#ToDo input")].forEach(el => el.addEventListener("input", recargarBarras));
     [...document.querySelectorAll("#ToDo input")].forEach(el => el.addEventListener("input", cargarTexto));
+    [...document.querySelectorAll("#ToDo input")].forEach(el => el.addEventListener("input", desbloquearSiguienteEtapa));
+    [...document.querySelectorAll("#ToDo input")].forEach(el => el.addEventListener("input", recargarBarras));
+
 }
 
 function modificarBarra(nodo, valor) {
@@ -52,12 +54,9 @@ function cargarTexto(e) {
 
     if (!e.target.checked) {
         let nodo = idNodo.split("paso")
-        if (nodo[1] - 1 == 0) {
-            marcoParaTexto1.innerHTML = mapTextos["inicio"]
-            return
-        }
-        marcoParaTexto1.innerHTML = mapTextos[nodo[0] + "paso" + (nodo[1] - 1)]
-        return
+        marcoParaTexto1.innerHTML = (nodo[1] - 1 == 0)
+            ? mapTextos["inicio"]
+            : mapTextos[nodo[0] + "paso" + (nodo[1] - 1)]
     } else {
         let texto = mapTextos[idNodo]
         marcoParaTexto1.innerHTML = texto
@@ -67,12 +66,9 @@ function cargarTexto(e) {
     let marcoParaTexto2 = document.querySelector("div#links")
     if (!e.target.checked) {
         let nodo = idNodo.split("paso")
-        if (nodo[1] - 1 == 0) {
-            marcoParaTexto2.innerHTML = segundoTexto["inicio"]
-            return
-        }
-        marcoParaTexto2.innerHTML = segundoTexto[nodo[0] + "paso" + (nodo[1] - 1)]
-        return
+        marcoParaTexto2.innerHTML = (nodo[1] - 1 == 0)
+            ? segundoTexto["inicio"]
+            : segundoTexto[nodo[0] + "paso" + (nodo[1] - 1)]
     } else {
         let texto = segundoTexto[idNodo]
         marcoParaTexto2.innerHTML = texto
@@ -92,7 +88,8 @@ function getSegundoTextos() {
         "inicio": "",
         "empadronamiento-paso1": " <select class='form-select p-1' onChange='cambioTextoPadron()'> <option value = 1>Bilbao</option> <option value = 2>Getxo</option>  <option value = 3>Barakaldo</option> <option value = 4>Amorebieta</option> <option value = 5>Arrigorriaga</option></select><div id='textopadron'><a href='https://www.bilbao.eus/cs/Satellite?c=BIO_Tramite_FA&categoria=temas&cid=1279100602114&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FBIO_Tramite_FA%2FBIO_TramiteSrvTram&perfil=ciudadano&pestana=2&selec=1&idProc=1279101110710'>Documentos ayuntamiento</a>`</div>",
         "empadronamiento-paso2": " <select class='form-select p-1' onChange='cambioTextoCita()'> <option value = 1>Bilbao</option> <option value = 2>Getxo</option>  <option value = 3>Barakaldo</option> <option value = 4>Amorebieta</option> <option value = 5>Arrigorriaga</option></select><div id='textopadron'><a href='https://www.bilbao.eus/cs/Satellite?c=Page&categoria=temas&cid=1279127425574&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FPage%2FBIO_ListadoServiciosSrvTram&perfil=ciudadano&selec=1'>Cita ayuntamiento</a>`</div>",
-        "empadronamiento-paso3": "",
+        "empadronamiento-paso3": "<input class='form-control' type='date'><p>Añade la fecha en que tienes la cita</p>",
+        "empadronamiento-paso4": "",
     }
 }
 function getlinksPadron() {
@@ -118,4 +115,30 @@ function cambioTextoPadron() {
 }
 function cambioTextoCita() {
     document.querySelector("div#textocita").innerHTML = `<a href='${getlinksCita()[document.querySelector("select").value]}'>Cita</a>`
+}
+function desbloquearSiguienteEtapa(e) {
+    let nodo = e.target
+    //comportamiento normal (desbloquear siguiente en lista)
+    //si activas, le quita el disable al nodo siguiente
+    if (nodo.checked) {
+        if (nodo.dataset.siguiente != undefined) {
+            let nodoSiguiente = document.querySelector("#" + nodo.dataset.siguiente)
+            nodoSiguiente.toggleAttribute("disabled")
+            nodoSiguiente.checked = false
+        }
+    }
+    //si desactivas le añade el disable y le queta el check a todos los nodos siguientes
+    else {
+        while (true) {
+            if (nodo.dataset.siguiente != undefined) {
+                let nodoSiguiente = document.querySelector("#" + nodo.dataset.siguiente)
+                nodoSiguiente.setAttribute("disabled", "disabled    ")
+                nodoSiguiente.checked = false
+                nodo = nodoSiguiente
+            }
+            else {
+                break
+            }
+        }
+    }
 }
