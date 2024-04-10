@@ -16,7 +16,7 @@ nav#menuNavBar {
 
 nav#menuNavBar,
 nav#menuNavBar * {
-    background-color: var(--primary-bg-color);
+    background-color: var(--primary-bg-color) !important;
     color: var(--primary-text-color);
     transition: background-color .5s, color .5s;
 }

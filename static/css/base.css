@@ -7,6 +7,10 @@
     --primary-text-color: #F2F2F2;
     --second-text-color: #1A1A1A;
 
+    --color-verde:#2C7330;
+    --color-azul: #5E88BF;
+    --color-rojo: #8C1B11;
+
     background-color: var(--background)
 }
 
