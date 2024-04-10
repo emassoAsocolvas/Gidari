@@ -44,90 +44,124 @@
     </nav>
     <div class="container-fluid">
 
-        <div class="pagina">
-            <h1>Avance en tu proceso</h1>
-            <div class="body m-1">
-                <div id="medidores" class="m-4">
-                    <div class="row">
-                        <div class="col-4">
-                            <p>Empadronamiento</p>
-                            <div id="bar-Empadronamiento" class="progress" role="progressbar"
-                                aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100">
-                                <div class="progress-bar" style="width: 25%">25%</div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <p>Salud</p>
-                            <div id="bar-Salud" class="progress" role="progressbar" aria-label="Example with label"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 25%">25%</div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <p>Educación</p>
-                            <div id="bar-Educacion" class="progress" role="progressbar" aria-label="Example with label"
-                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" style="width: 25%">25%</div>
+        <div class="pagina m-2">
+            <h1 class="m-4">Progreso de tus tramites</h1>
+            <div class="m-2">
+                <div class="row justify-content-center">
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Empadronamiento</h5>
+
+                                <div id="bar-Empadronamiento" class="progress mt-3" role="progressbar"
+                                    aria-label="Example with label" aria-valuenow="0" aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 0%">0%</div>
+                                </div>
+                                <div id="Empadronamiento" class="marcoToDo mt-3">
+                                    <label class="d-flex justify-content-between m-1">
+                                        Recolectar los documentos
+                                        <input class="form-check-input" type="checkbox" id="empadronamiento-paso1"
+                                            data-siguiente="empadronamiento-paso2">
+                                    </label>
+                                    <label class="d-flex justify-content-between m-1">
+                                        Reservar cita previa
+                                        <input disabled class="form-check-input" type="checkbox"
+                                            id="empadronamiento-paso2" data-siguiente="empadronamiento-paso3">
+                                    </label>
+                                    <label class="d-flex justify-content-between m-1">
+                                        Acudir a la cita previa
+                                        <input disabled class="form-check-input" type="checkbox"
+                                            id="empadronamiento-paso3" data-siguiente="empadronamiento-paso4">
+                                    </label>
+                                </div>
+                                <div id="textos" class="row justify-content-center g-0 mt-3">
+                                    <div class="col-12" id="texto">
+                                        Cada ayuntamiento puede tener requisitos específicos, puede consultar los datos
+                                        del Ayuntamiento
+                                        del municipio en que reside en
+                                    </div>
+                                    <div class="col-12 mt-3" id="links">
+                                        <select class='form-select p-1' onChange='cambioTextoPadron()'>
+                                            <option value=1>Bilbao</option>
+                                            <option value=2>Getxo</option>
+                                            <option value=3>Barakaldo</option>
+                                            <option value=4>Amorebieta</option>
+                                            <option value=5>Arrigorriaga</option>
+                                        </select>
+                                        <div id='textopadron' class="text-center"><a
+                                                href='https://www.bilbao.eus/cs/Satellite?c=BIO_Tramite_FA&categoria=temas&cid=1279100602114&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FBIO_Tramite_FA%2FBIO_TramiteSrvTram&perfil=ciudadano&pestana=2&selec=1&idProc=1279101110710'>Documentos
+                                                ayuntamiento</a></div>
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="textos" class="row justify-content-center  g-0">
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Salud</h5>
+                                <div id="bar-Salud" class="progress mt-3" role="progressbar"
+                                    aria-label="Example with label" aria-valuenow="0" aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 0%">0%</div>
+                                </div>
 
-
-                    <div class="col-3 border" id="links">
-
-                    </div>
-                    <div class="col-8 border p-1" id="texto">Da click a los paso de abajo para ver mas información</div>
-                </div>
-                <div id="ToDo">
-                    <div class="row justify-content-evenly g-0">
-                        <div class="col-3" id="Empadronamiento">
-                            <h2>Empadronamiento</h2>
-                            <div class="marcoToDo">
-                                <label class="d-flex justify-content-between m-1"><span>Recolectar los documentos</span>
-                                    <input type="checkbox" id="empadronamiento-paso1"
-                                        data-siguiente="empadronamiento-paso2"></label>
-                                <label class="d-flex justify-content-between m-1"><span>Reservar cita
-                                        previa</span><input disabled type="checkbox" id="empadronamiento-paso2"
-                                        data-siguiente="empadronamiento-paso3"></label>
-                                <label class="d-flex justify-content-between m-1"><span>Acudir a la cita
-                                        previa</span><input disabled type="checkbox" id="empadronamiento-paso3"
-                                        data-siguiente="empadronamiento-paso4"></label>
-                                <label class="d-flex justify-content-between m-1"><span>Tienes el
-                                        empadronamiento</span><input disabled type="checkbox"
-                                        id="empadronamiento-paso4"></label>
-                            </div>
-                        </div>
-                        <div class="col-3" id="Salud">
-                            <h2>Salud</h2>
-                            <div class="marcoToDo">
-                                <div class="row">
-                                    <label> paso 1 <input type="checkbox" name="paso1" id="salud-paso1"></label>
-                                    <label> paso 2 <input type="checkbox" name="paso2" id="salud-paso2"></label>
-                                    <label> paso 3 <input type="checkbox" name="paso3" id="salud-paso3"></label>
+                                <div class="marcoToDo mt-3">
+                                    <div class="row">
+                                        <label class="d-flex justify-content-between m-1"> Paso 1 <input
+                                                class="form-check-input" type="checkbox" name="paso1"
+                                                id="salud-paso1"></label>
+                                        <label class="d-flex justify-content-between m-1"> Paso 2 <input
+                                                class="form-check-input" type="checkbox" name="paso2"
+                                                id="salud-paso2"></label>
+                                        <label class="d-flex justify-content-between m-1"> Paso 3 <input
+                                                class="form-check-input" type="checkbox" name="paso3"
+                                                id="salud-paso3"></label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-3" id="Educacion">
-                            <h2>Educación</h2>
-                            <div class="marcoToDo">
-                                <label> paso 1 <input type="checkbox" name="paso1" id="educacion-paso1"></label>
-                                <label> paso 2 <input type="checkbox" name="paso2" id="educacion-paso2"></label>
-                                <label> paso 3 <input type="checkbox" name="paso3" id="educacion-paso3"></label>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Educación</h5>
+                                <div id="bar-Educacion" class="progress mt-3" role="progressbar"
+                                    aria-label="Example with label" aria-valuenow="0" aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <div class="progress-bar mt-3" style="width: 05%">0%</div>
+                                </div>
+                                <div class="marcoToDo mt-3">
+                                    <label class="d-flex justify-content-between m-1"> paso 1 <input
+                                            class="form-check-input" type="checkbox" name="paso1"
+                                            id="educacion-paso1"></label>
+                                    <label class="d-flex justify-content-between m-1"> paso 2 <input
+                                            class="form-check-input" type="checkbox" name="paso2"
+                                            id="educacion-paso2"></label>
+                                    <label class="d-flex justify-content-between m-1"> paso 3 <input
+                                            class="form-check-input" type="checkbox" name="paso3"
+                                            id="educacion-paso3"></label>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <div id="chatbot" class="">
-                        <h2 class="position-fixed" style="bottom: 1em; right:1em;"><i class="bi bi-wechat"></i></h2>
-                    </div>
-
                 </div>
 
-
             </div>
+
+
+            <div id="chatbot" class="">
+                <h2 class="position-fixed" style="bottom: 1em; right:1em;"><i class="bi bi-wechat"></i></h2>
+            </div>
+
+
+
         </div>
+    </div>
     </div>
 
 </body>

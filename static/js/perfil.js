@@ -13,9 +13,9 @@ function init() {
 }
 
 function cargarEventosCheckBox() {
-    [...document.querySelectorAll("#ToDo input")].forEach(el => el.addEventListener("input", cargarTexto));
-    [...document.querySelectorAll("#ToDo input")].forEach(el => el.addEventListener("input", desbloquearSiguienteEtapa));
-    [...document.querySelectorAll("#ToDo input")].forEach(el => el.addEventListener("input", recargarBarras));
+    [...document.querySelectorAll(".card input")].forEach(el => el.addEventListener("input", cargarTexto));
+    [...document.querySelectorAll(".card input")].forEach(el => el.addEventListener("input", desbloquearSiguienteEtapa));
+    [...document.querySelectorAll(".card input")].forEach(el => el.addEventListener("input", recargarBarras));
 
 }
 
@@ -40,7 +40,7 @@ function recargarBarras() {
 }
 
 function calcularPorcentajes(nombre, nodo) {
-    let inputs = document.querySelectorAll("div#ToDo div#" + nombre + " input")
+    let inputs = document.querySelectorAll(".card div#" + nombre + " input")
     let totalInputs = inputs.length
     let inputsCheckeados = [...inputs].map(el => el.checked).reduce((a, b) => a + b, 0)
     let porcentaje = (inputsCheckeados / totalInputs) * 100
@@ -76,20 +76,18 @@ function cargarTexto(e) {
 }
 function getTextos() {
     return {
-        "inicio": "Da click a los paso de abajo para ver mas información",
-        "empadronamiento-paso1": "Cada ayuntamiento puede tener requisitos específicos, puede consultar los datos del Ayuntamiento del municipio en que reside en",
-        "empadronamiento-paso2": "Selecciona tu municipio para acceder a realizar la reserva",
-        "empadronamiento-paso3": "¿Para cuándo tendrás la cita? Te ayudaremos a recordarla",
-        "empadronamiento-paso4": "¡MUY BIEN! YA TIENES EL PADRÓN",
+        "inicio": "Cada ayuntamiento puede tener requisitos específicos, puede consultar los datos del Ayuntamiento del municipio en que reside en",
+        "empadronamiento-paso1": "Selecciona tu municipio para acceder a realizar la reserva",
+        "empadronamiento-paso2": "¿Para cuándo tendrás la cita? Te ayudaremos a recordarla",
+        "empadronamiento-paso3": "¡MUY BIEN! YA TIENES EL PADRÓN",
     }
 }
 function getSegundoTextos() {
     return {
-        "inicio": "",
-        "empadronamiento-paso1": " <select class='form-select p-1' onChange='cambioTextoPadron()'> <option value = 1>Bilbao</option> <option value = 2>Getxo</option>  <option value = 3>Barakaldo</option> <option value = 4>Amorebieta</option> <option value = 5>Arrigorriaga</option></select><div id='textopadron'><a href='https://www.bilbao.eus/cs/Satellite?c=BIO_Tramite_FA&categoria=temas&cid=1279100602114&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FBIO_Tramite_FA%2FBIO_TramiteSrvTram&perfil=ciudadano&pestana=2&selec=1&idProc=1279101110710'>Documentos ayuntamiento</a>`</div>",
-        "empadronamiento-paso2": " <select class='form-select p-1' onChange='cambioTextoCita()'> <option value = 1>Bilbao</option> <option value = 2>Getxo</option>  <option value = 3>Barakaldo</option> <option value = 4>Amorebieta</option> <option value = 5>Arrigorriaga</option></select><div id='textopadron'><a href='https://www.bilbao.eus/cs/Satellite?c=Page&categoria=temas&cid=1279127425574&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FPage%2FBIO_ListadoServiciosSrvTram&perfil=ciudadano&selec=1'>Cita ayuntamiento</a>`</div>",
-        "empadronamiento-paso3": "<input class='form-control' type='date'><p>Añade la fecha en que tienes la cita</p>",
-        "empadronamiento-paso4": "",
+        "inicio": "<select class='form-select p-1' onChange='cambioTextoPadron()'> <option value = 1>Bilbao</option> <option value = 2>Getxo</option>  <option value = 3>Barakaldo</option> <option value = 4>Amorebieta</option> <option value = 5>Arrigorriaga</option></select><div class='text-center' id='textopadron'><a href='https://www.bilbao.eus/cs/Satellite?c=BIO_Tramite_FA&categoria=temas&cid=1279100602114&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FBIO_Tramite_FA%2FBIO_TramiteSrvTram&perfil=ciudadano&pestana=2&selec=1&idProc=1279101110710'>Documentos ayuntamiento</a></div>",
+        "empadronamiento-paso1": " <select class='form-select p-1' onChange='cambioTextoCita()'> <option value = 1>Bilbao</option> <option value = 2>Getxo</option>  <option value = 3>Barakaldo</option> <option value = 4>Amorebieta</option> <option value = 5>Arrigorriaga</option></select><div class='text-center'  id='textopadron'><a href='https://www.bilbao.eus/cs/Satellite?c=Page&categoria=temas&cid=1279127425574&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FPage%2FBIO_ListadoServiciosSrvTram&perfil=ciudadano&selec=1'>Cita ayuntamiento</a>`</div>",
+        "empadronamiento-paso2": "<input class='form-control' type='date'>",
+        "empadronamiento-paso3": "",
     }
 }
 function getlinksPadron() {
@@ -123,8 +121,10 @@ function desbloquearSiguienteEtapa(e) {
     if (nodo.checked) {
         if (nodo.dataset.siguiente != undefined) {
             let nodoSiguiente = document.querySelector("#" + nodo.dataset.siguiente)
-            nodoSiguiente.toggleAttribute("disabled")
-            nodoSiguiente.checked = false
+            if (nodoSiguiente != null) {
+                nodoSiguiente.toggleAttribute("disabled")
+                nodoSiguiente.checked = false
+            }
         }
     }
     //si desactivas le añade el disable y le queta el check a todos los nodos siguientes
@@ -132,9 +132,14 @@ function desbloquearSiguienteEtapa(e) {
         while (true) {
             if (nodo.dataset.siguiente != undefined) {
                 let nodoSiguiente = document.querySelector("#" + nodo.dataset.siguiente)
-                nodoSiguiente.setAttribute("disabled", "disabled    ")
-                nodoSiguiente.checked = false
-                nodo = nodoSiguiente
+                if (nodoSiguiente != null) {
+                    nodoSiguiente.setAttribute("disabled", "disabled")
+                    nodoSiguiente.checked = false
+                    nodo = nodoSiguiente
+                }
+                else {
+                    break
+                }
             }
             else {
                 break

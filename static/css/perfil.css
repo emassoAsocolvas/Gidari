@@ -3,7 +3,6 @@
 }
 
 .marcoToDo {
-    border: 1px solid black;
 
     label {
         display: flex;
