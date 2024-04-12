@@ -84,8 +84,8 @@ function getTextos() {
 }
 function getSegundoTextos() {
     return {
-        "inicio": "<select class='form-select p-1' onChange='cambioTextoPadron()'> <option value = 1>Bilbao</option> <option value = 2>Getxo</option>  <option value = 3>Barakaldo</option> <option value = 4>Amorebieta</option> <option value = 5>Arrigorriaga</option></select><div class='text-center' id='textopadron'><a href='https://www.bilbao.eus/cs/Satellite?c=BIO_Tramite_FA&categoria=temas&cid=1279100602114&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FBIO_Tramite_FA%2FBIO_TramiteSrvTram&perfil=ciudadano&pestana=2&selec=1&idProc=1279101110710'>Documentos ayuntamiento</a></div>",
-        "empadronamiento-paso1": " <select class='form-select p-1' onChange='cambioTextoCita()'> <option value = 1>Bilbao</option> <option value = 2>Getxo</option>  <option value = 3>Barakaldo</option> <option value = 4>Amorebieta</option> <option value = 5>Arrigorriaga</option></select><div class='text-center'  id='textopadron'><a href='https://www.bilbao.eus/cs/Satellite?c=Page&categoria=temas&cid=1279127425574&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FPage%2FBIO_ListadoServiciosSrvTram&perfil=ciudadano&selec=1'>Cita ayuntamiento</a>`</div>",
+        "inicio": "<select class='form-select p-1' onChange='cambioTextoPadron()'> <option value = 1>Bilbao</option> <option value = 2>Getxo</option>  <option value = 3>Barakaldo</option> <option value = 4>Amorebieta</option> <option value = 5>Arrigorriaga</option></select><div class='text-center' id='textopadron'><a target='_blank' class='link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover' href='https://www.bilbao.eus/cs/Satellite?c=BIO_Tramite_FA&categoria=temas&cid=1279100602114&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FBIO_Tramite_FA%2FBIO_TramiteSrvTram&perfil=ciudadano&pestana=2&selec=1&idProc=1279101110710'>Documentos ayuntamiento</a></div>",
+        "empadronamiento-paso1": " <select class='form-select p-1' onChange='cambioTextoCita()'> <option value = 1>Bilbao</option> <option value = 2>Getxo</option>  <option value = 3>Barakaldo</option> <option value = 4>Amorebieta</option> <option value = 5>Arrigorriaga</option></select><div class='text-center'  id='textopadron'><a target='_blank' class='link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover' href='https://www.bilbao.eus/cs/Satellite?c=Page&categoria=temas&cid=1279127425574&language=es&menuAcordeonActivo=9&pageid=1279127425574&pagename=Bilbaonet%2FPage%2FBIO_ListadoServiciosSrvTram&perfil=ciudadano&selec=1'>Cita ayuntamiento</a></div>",
         "empadronamiento-paso2": "<input class='form-control' type='date'>",
         "empadronamiento-paso3": "",
     }
@@ -109,10 +109,10 @@ function getlinksCita() {
     }
 }
 function cambioTextoPadron() {
-    document.querySelector("div#textopadron").innerHTML = `<a href='${getlinksPadron()[document.querySelector("select").value]}'>Documentos ayuntamiento</a>`
+    document.querySelector("div#textopadron a").href = getlinksPadron()[document.querySelector("select").value]
 }
 function cambioTextoCita() {
-    document.querySelector("div#textocita").innerHTML = `<a href='${getlinksCita()[document.querySelector("select").value]}'>Cita</a>`
+    document.querySelector("div#textocita a").href = getlinksCita()[document.querySelector("select").value]
 }
 function desbloquearSiguienteEtapa(e) {
     let nodo = e.target
@@ -136,14 +136,10 @@ function desbloquearSiguienteEtapa(e) {
                     nodoSiguiente.setAttribute("disabled", "disabled")
                     nodoSiguiente.checked = false
                     nodo = nodoSiguiente
-                }
-                else {
-                    break
+                    continue
                 }
             }
-            else {
-                break
-            }
+            break
         }
     }
 }
